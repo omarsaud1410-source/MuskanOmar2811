@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#050a1c">
+<meta name="description" content="Muskan &amp; Omar's engagement — Saturday, 28 November 2026, 7:00 PM IST">
+<title>Muskan &amp; Omar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* VOICE   occasion, hushed and tender: a private love letter under a night sky
+   IDEA    an engraved invitation held up against a midnight sky
+   PICTURE the live countdown (then the joined name) set large in white and silver, stars and a few drifting hearts behind
+   COLOUR  midnight #050a1c ground, royal blue glow, white ink, silver #c8d1e3 detail
+   TYPE    Cormorant Garamond display + Jost text, Amiri for the dua
+   LAYOUT  one centred column a screen tall; on phones the four units stay in one row */
+:root{color-scheme:dark;--night:#050a1c;--royal:#2f5bd9;--glow:#4a74ff;--silver:#c8d1e3;--mist:#9aa6c2;--soft:#dfe6f5;--serif:"Cormorant Garamond","Cormorant",Georgia,"Times New Roman",serif;--sans:"Jost","Helvetica Neue",Arial,sans-serif;--arabic:"Amiri","Noto Naskh Arabic","Traditional Arabic","Geeza Pro",serif}
+*{box-sizing:border-box;min-width:0}
+[hidden]{display:none!important}
+html,body{margin:0;background:var(--night)}
+body{color:#fff;font:16px/1.6 var(--sans);overflow-x:clip;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+.sky{position:fixed;inset:0;z-index:0;background:radial-gradient(130% 85% at 50% 36%,#142a68 0%,#0c1a45 34%,#070f2b 64%,var(--night) 100%)}
+.sky::after{content:"";position:absolute;inset:0;background:radial-gradient(70% 45% at 50% 105%,rgba(47,91,217,.24),transparent 70%)}
+#fx{position:fixed;inset:0;z-index:1;width:100%;height:100%;pointer-events:none}
+.stage{position:relative;z-index:2;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;overflow:hidden;overflow:clip}
+.scene{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:calc(44px + env(safe-area-inset-top,0px)) max(20px,env(safe-area-inset-right,0px)) calc(44px + env(safe-area-inset-bottom,0px)) max(20px,env(safe-area-inset-left,0px));transition:opacity 1.7s ease,transform 1.7s ease}
+.scene.leaving{opacity:0;transform:scale(.97)}
+.orn{display:flex;align-items:center;justify-content:center;gap:14px;color:var(--silver)}
+.orn i{display:block;width:clamp(44px,12vw,96px);height:1px;background:linear-gradient(90deg,transparent,rgba(200,209,227,.65))}
+.orn i:last-child{transform:scaleX(-1)}
+.orn svg{width:16px;height:15px;fill:none;stroke:currentColor;stroke-width:1.3}
+.kicker{margin:22px 0 0;font:500 13px/1.6 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--silver);text-wrap:balance}
+.tag{margin:12px 0 0;font:italic 400 clamp(1.3rem,4.8vw,1.8rem)/1.3 var(--serif);color:var(--soft)}
+.names{margin:clamp(16px,3vh,28px) 0 0;font:500 clamp(2.8rem,11.5vw,5.6rem)/1.02 var(--serif);letter-spacing:-.01em;color:#fff;text-shadow:0 0 42px rgba(74,116,255,.4)}
+.amp{font-style:italic;font-weight:400;color:var(--silver);padding:0 .04em}
+.clock{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));width:min(100%,660px);margin:clamp(26px,4.5vh,46px) auto clamp(22px,3.5vh,34px);padding:clamp(18px,3vw,30px) clamp(4px,1.5vw,18px);border:1px solid rgba(200,209,227,.2);border-radius:22px;background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.015));box-shadow:inset 0 1px 0 rgba(255,255,255,.09),0 34px 90px -44px rgba(74,116,255,.75)}
+.u{position:relative;display:flex;flex-direction:column;align-items:center;gap:6px}
+.u+.u::before{content:"";position:absolute;left:0;top:10%;bottom:10%;width:1px;background:linear-gradient(transparent,rgba(200,209,227,.38),transparent)}
+.n{display:block;font:300 clamp(2.8rem,12.5vw,5.8rem)/1 var(--serif);font-variant-numeric:lining-nums tabular-nums;color:#fff;text-shadow:0 0 24px rgba(120,150,255,.35)}
+.n.tick{animation:tick .6s cubic-bezier(.2,.7,.2,1)}
+.l{font:400 13px/1.2 var(--sans);letter-spacing:.08em;color:var(--mist)}
+.date{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px 14px;margin:0;font:400 15px/1.5 var(--sans);letter-spacing:.06em;color:#e6ebf7}
+.date span{white-space:nowrap}
+.date b{display:block;width:1px;height:1.1em;background:rgba(200,209,227,.55)}
+.line{max-width:31ch;margin:clamp(20px,3.5vh,30px) auto 0;font:italic 400 clamp(1.15rem,4.2vw,1.42rem)/1.45 var(--serif);color:#bcc6de;text-wrap:balance}
+.crown{position:relative;margin:clamp(14px,2.5vh,26px) 0 0;isolation:isolate}
+.crown::before{content:"";position:absolute;left:50%;top:50%;width:min(160vw,1150px);height:min(120vw,640px);transform:translate(-50%,-50%);z-index:-1;opacity:0;background:radial-gradient(closest-side,rgba(225,233,255,.26),rgba(74,116,255,.34) 26%,rgba(47,91,217,.13) 55%,transparent 78%)}
+.joined{margin:0;font:italic 500 clamp(3rem,14.5vw,7.2rem)/1.05 var(--serif);letter-spacing:-.01em;color:#fff;white-space:nowrap;text-shadow:0 0 30px rgba(120,150,255,.6),0 0 2px rgba(255,255,255,.5)}
+.jn,.hb{display:inline-block}
+.nw{white-space:nowrap}
+.hb{margin-left:.14em;vertical-align:.08em;will-change:transform}
+.hb svg{display:block;width:.4em;height:.37em;overflow:visible;filter:drop-shadow(0 0 .1em rgba(140,170,255,.9))}
+.card{width:min(100%,720px);margin:clamp(24px,4vh,40px) auto 0;padding:clamp(22px,4vw,38px) clamp(16px,4vw,42px);border:1px solid rgba(200,209,227,.2);border-radius:22px;background:linear-gradient(180deg,rgba(20,38,96,.86),rgba(9,19,52,.82));box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 34px 90px -50px rgba(74,116,255,.7)}
+.dua{margin:0;font:400 clamp(1.5rem,5.9vw,2.35rem)/2.05 var(--arabic);color:#fff;direction:rtl;text-align:center;text-wrap:balance}
+.rule{width:56px;height:1px;margin:16px auto 0;border:0;background:linear-gradient(90deg,transparent,rgba(200,209,227,.7),transparent)}
+.tr{margin:16px auto 0;max-width:40ch;text-wrap:pretty;font:italic 400 clamp(1.1rem,4vw,1.32rem)/1.5 var(--serif);color:var(--silver)}
+.mean{margin:14px auto 0;max-width:46ch;text-wrap:pretty;font:300 clamp(1rem,3.7vw,1.07rem)/1.7 var(--sans);color:#e3e9f6}
+.alh{margin:22px 0 0;font:500 clamp(1.75rem,6.6vw,2.7rem)/1.15 var(--serif);text-wrap:balance}
+.bless{margin:12px auto 0;max-width:36ch;font:italic 400 clamp(1.12rem,4.1vw,1.38rem)/1.5 var(--serif);color:#c3cde4;text-wrap:balance}
+.after .orn{margin-top:clamp(22px,3.5vh,32px)}
+.after .orn:first-child{margin-top:0}
+.r{opacity:0}
+.in .r{animation:rise 1.4s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i)*.5s + 1.7s)}
+.in.quick .r{animation-delay:calc(var(--i)*.22s + .7s)}
+.in .crown::before{animation:halo 2.6s ease-out .1s forwards,breathe 6s ease-in-out 2.7s infinite alternate}
+.in .jm{animation:fromL 2.6s cubic-bezier(.16,.8,.2,1) .25s both}
+.in .jo{animation:fromR 2.6s cubic-bezier(.16,.8,.2,1) .25s both}
+.in .hb{animation:heartIn 1.3s ease-out 2.3s both,beat 3.2s ease-in-out 3.8s infinite}
+.in.quick .hb{animation:heartIn 1s ease-out 1.4s both,beat 3.2s ease-in-out 2.6s infinite}
+@keyframes tick{from{opacity:.2;transform:translateY(-.1em)}to{opacity:1;transform:none}}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes halo{from{opacity:0;transform:translate(-50%,-50%) scale(.5)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+@keyframes breathe{from{opacity:1;transform:translate(-50%,-50%) scale(1)}to{opacity:.72;transform:translate(-50%,-50%) scale(1.08)}}
+@keyframes fromL{from{opacity:0;transform:translateX(-.5em)}to{opacity:1;transform:none}}
+@keyframes fromR{from{opacity:0;transform:translateX(.5em)}to{opacity:1;transform:none}}
+@keyframes heartIn{from{opacity:0;transform:scale(.3)}to{opacity:1;transform:none}}
+@keyframes beat{0%,56%,100%{transform:scale(1)}14%{transform:scale(1.14)}28%{transform:scale(1)}40%{transform:scale(1.08)}}
+@media (max-width:480px){.kicker{letter-spacing:.17em}.date{font-size:14px;letter-spacing:.03em;gap:6px 11px}.clock{border-radius:18px}}
+@media (max-height:640px) and (orientation:landscape){.scene{padding-top:28px;padding-bottom:28px}.n{font-size:clamp(2.4rem,9vh,4rem)}.names{font-size:clamp(2.2rem,9vh,3.6rem)}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.r,.crown::before{opacity:1!important}}
+</style>
+</head>
+<body>
+<div class="sky" aria-hidden="true"></div>
+<canvas id="fx" aria-hidden="true"></canvas>
+
+<main class="stage">
+  <section class="scene" id="before" aria-labelledby="names">
+    <div class="orn" aria-hidden="true"><i></i><svg viewBox="0 0 24 22"><path d="M12 20.4C6 15.9 2.2 12.4 2.2 8 2.2 5 4.5 2.8 7.3 2.8c1.9 0 3.6 1 4.7 2.6 1.1-1.6 2.8-2.6 4.7-2.6 2.8 0 5.1 2.2 5.1 5.2 0 4.4-3.8 7.9-9.8 12.4z"/></svg><i></i></div>
+    <p class="kicker">A special moment is approaching</p>
+    <p class="tag">Two hearts. One beautiful beginning.</p>
+    <h1 class="names" id="names">Muskan <span class="amp">&amp;</span> Omar</h1>
+    <div class="clock" role="timer" aria-label="Time remaining until the engagement">
+      <div class="u"><span class="n" id="d">00</span><span class="l" id="dl">Days</span></div>
+      <div class="u"><span class="n" id="h">00</span><span class="l" id="hl">Hours</span></div>
+      <div class="u"><span class="n" id="m">00</span><span class="l" id="ml">Minutes</span></div>
+      <div class="u"><span class="n" id="s">00</span><span class="l" id="sl">Seconds</span></div>
+    </div>
+    <p class="date"><span>Saturday, 28 November 2026</span><b aria-hidden="true"></b><span>7:00 PM IST</span></p>
+    <p class="line">Some moments are written by Allah, and some are worth counting every second for.</p>
+  </section>
+
+  <section class="scene after" id="after" aria-labelledby="joined" hidden>
+    <div class="orn r" style="--i:0" aria-hidden="true"><i></i><svg viewBox="0 0 24 22"><path d="M12 20.4C6 15.9 2.2 12.4 2.2 8 2.2 5 4.5 2.8 7.3 2.8c1.9 0 3.6 1 4.7 2.6 1.1-1.6 2.8-2.6 4.7-2.6 2.8 0 5.1 2.2 5.1 5.2 0 4.4-3.8 7.9-9.8 12.4z"/></svg><i></i></div>
+    <div class="crown">
+      <h1 class="joined" id="joined" aria-label="MuskanOmar"><span class="jn jm">Muskan</span><span class="jn jo">Omar</span><span class="hb" aria-hidden="true"><svg viewBox="0 0 24 22"><defs><linearGradient id="hg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#b9c7ee"/></linearGradient></defs><path fill="url(#hg)" d="M12 20.4C6 15.9 2.2 12.4 2.2 8 2.2 5 4.5 2.8 7.3 2.8c1.9 0 3.6 1 4.7 2.6 1.1-1.6 2.8-2.6 4.7-2.6 2.8 0 5.1 2.2 5.1 5.2 0 4.4-3.8 7.9-9.8 12.4z"/></svg></span></h1>
+    </div>
+    <div class="card r" style="--i:1">
+      <p class="dua" lang="ar" dir="rtl">اللَّهُمَّ اجْمَعْ بَيْنَ مُسْكَانَ وَعُمَرَ فِي الْخَيْرِ وَالْبَرَكَةِ وَعَلَى طَاعَتِكَ وَفِي حَلَالِكَ</p>
+      <hr class="rule">
+      <p class="tr r" style="--i:2" lang="ar-Latn">Allahumma ijma‘ bayna Muskan wa ‘Umar <span class="nw">fil-khayri</span> <span class="nw">wal-barakati</span> wa ‘ala ta‘atika wa fi halalika.</p>
+      <p class="mean r" style="--i:3">“O Allah, unite Muskan and Omar in goodness and blessings, upon obedience to You, and through what You have made halal.”</p>
+    </div>
+    <div class="orn r" style="--i:4" aria-hidden="true"><i></i><svg viewBox="0 0 24 22"><path d="M12 20.4C6 15.9 2.2 12.4 2.2 8 2.2 5 4.5 2.8 7.3 2.8c1.9 0 3.6 1 4.7 2.6 1.1-1.6 2.8-2.6 4.7-2.6 2.8 0 5.1 2.2 5.1 5.2 0 4.4-3.8 7.9-9.8 12.4z"/></svg><i></i></div>
+    <p class="alh r" style="--i:5">Alhamdulillah. Our beautiful beginning.</p>
+    <p class="bless r" style="--i:6">May Allah bless our journey together with love, mercy, barakah and a lifetime of happiness.</p>
+  </section>
+</main>
+
+<script>
+{
+/* Saturday 28 November 2026, 7:00 PM IST (Asia/Kolkata, UTC+05:30) = 13:30 UTC.
+   An absolute instant, so every visitor sees the same countdown whatever their own time zone. */
+const TARGET = Date.UTC(2026, 10, 28, 13, 30, 0);
+const $ = id => document.getElementById(id);
+const before = $('before'), after = $('after');
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- sky: stars and hearts on one canvas ---------- */
+const cv = $('fx'), cx = cv.getContext('2d');
+const HEART = new Path2D('M12 20.4C6 15.9 2.2 12.4 2.2 8 2.2 5 4.5 2.8 7.3 2.8c1.9 0 3.6 1 4.7 2.6 1.1-1.6 2.8-2.6 4.7-2.6 2.8 0 5.1 2.2 5.1 5.2 0 4.4-3.8 7.9-9.8 12.4z');
+const SPR = 64, K = 1.55, HW = 24 * K;
+const mk = (fill, glow) => {
+  const c = document.createElement('canvas'); c.width = c.height = SPR;
+  const g = c.getContext('2d');
+  g.translate((SPR - 24 * K) / 2, (SPR - 22 * K) / 2); g.scale(K, K);
+  g.shadowColor = glow; g.shadowBlur = 9; g.fillStyle = fill; g.fill(HEART);
+  return c;
+};
+const sprites = [mk('#ffffff', 'rgba(165,188,255,.95)'), mk('#d3daea', 'rgba(200,209,227,.8)'), mk('#aebfff', 'rgba(74,116,255,.95)')];
+const starImg = (() => {
+  const c = document.createElement('canvas'); c.width = c.height = 32;
+  const g = c.getContext('2d'), r = g.createRadialGradient(16, 16, 0, 16, 16, 16);
+  r.addColorStop(0, 'rgba(255,255,255,1)'); r.addColorStop(.16, 'rgba(228,235,255,.9)');
+  r.addColorStop(.45, 'rgba(150,175,255,.2)'); r.addColorStop(1, 'rgba(150,175,255,0)');
+  g.fillStyle = r; g.fillRect(0, 0, 32, 32); return c;
+})();
+const rnd = (a, b) => a + Math.random() * (b - a);
+const pick = () => { const x = Math.random(); return x < .5 ? 0 : x < .8 ? 1 : 2; };
+let W = 0, H = 0, DPR = 1, stars = [], hearts = [], mode = 'calm', showerEnd = 0, acc = 0, lastT = 0, rz = 0;
+
+function size() {
+  DPR = Math.min(window.devicePixelRatio || 1, 2);
+  W = innerWidth; H = innerHeight;
+  cv.width = Math.round(W * DPR); cv.height = Math.round(H * DPR);
+  if (!stars.length) {
+    const n = Math.round(Math.min(170, Math.max(60, W * H / 5200)));
+    stars = Array.from({ length: n }, () => ({ x: Math.random(), y: Math.random(), r: Math.random() < .08 ? rnd(1.6, 2.4) : rnd(.45, 1.3), a: rnd(.35, .95), w: rnd(.4, 1.6), p: rnd(0, 6.28) }));
+  }
+  if (reduce) draw(0);
+}
+const floater = fresh => ({ k: 0, x: rnd(0, W), y: fresh ? rnd(H * .2, H) : H + rnd(20, 80), s: rnd(9, 21), v: -rnd(9, 19), amp: rnd(8, 26), f: rnd(.05, .12), p: rnd(0, 6.28), r: rnd(-.25, .25), vr: 0, a: rnd(.14, .32), i: pick(), age: 0 });
+const faller = top => ({ k: 1, x: rnd(0, W), y: top ? rnd(-H * .3, -10) : -rnd(10, 40), s: rnd(4.5, 11), v: rnd(48, 112), amp: rnd(6, 22), f: rnd(.1, .25), p: rnd(0, 6.28), r: rnd(-.6, .6), vr: rnd(-.7, .7), a: rnd(.55, .95), i: pick(), age: 0 });
+
+function draw(t) {
+  cx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  cx.clearRect(0, 0, W, H);
+  for (const s of stars) {
+    cx.globalAlpha = reduce ? s.a * .8 : s.a * (.6 + .4 * Math.sin(t * s.w + s.p));
+    const d = s.r * 6; cx.drawImage(starImg, s.x * W - d / 2, s.y * H - d / 2, d, d);
+  }
+  for (const h of hearts) {
+    let a = h.a * Math.min(1, h.age / 1.6);
+    if (!h.k) a *= Math.max(0, Math.min(1, (h.y + 30) / (H * .35)));
+    if (a < .01) continue;
+    const x = h.x + Math.sin(t * h.f * 6.283 + h.p) * h.amp;
+    const c = Math.cos(h.r) * DPR, sn = Math.sin(h.r) * DPR, d = h.s * SPR / HW;
+    cx.setTransform(c, sn, -sn, c, x * DPR, h.y * DPR);
+    cx.globalAlpha = a; cx.drawImage(sprites[h.i], -d / 2, -d / 2, d, d);
+  }
+  cx.globalAlpha = 1;
+}
+function frame(now) {
+  const t = now / 1000, dt = lastT ? Math.min(.05, t - lastT) : 0; lastT = t;
+  const want = W < 600 ? 6 : 10;
+  let floats = 0; for (const h of hearts) if (!h.k) floats++;
+  if (floats < want && Math.random() < dt * .7) hearts.push(floater(false));
+  if (mode === 'after') {
+    const rate = now < showerEnd ? (W < 600 ? 15 : 28) : (W < 600 ? 1 : 1.6);
+    acc += rate * dt; while (acc >= 1) { acc--; hearts.push(faller(false)); }
+  }
+  for (const h of hearts) { h.age += dt; h.y += h.v * dt; h.r += h.vr * dt; }
+  hearts = hearts.filter(h => h.k ? h.y < H + 30 : h.y > -40);
+  draw(t);
+  requestAnimationFrame(frame);
+}
+
+/* ---------- countdown ---------- */
+const shown = {};
+const pad = n => String(n).padStart(2, '0');
+function set(k, v, one, many) {
+  const txt = pad(v);
+  if (shown[k] === txt) return;
+  shown[k] = txt;
+  const n = $(k); n.textContent = txt;
+  $(k + 'l').textContent = v === 1 ? one : many;
+  if (!reduce) { n.classList.remove('tick'); void n.offsetWidth; n.classList.add('tick'); }
+}
+let target = TARGET, timer = 0, swap = 0, revealed = false;
+function tick() {
+  const left = target - Date.now();
+  if (left <= 0) { reveal(true); return; }
+  const sec = Math.floor(left / 1000);
+  set('d', Math.floor(sec / 86400), 'Day', 'Days');
+  set('h', Math.floor(sec % 86400 / 3600), 'Hour', 'Hours');
+  set('m', Math.floor(sec % 3600 / 60), 'Minute', 'Minutes');
+  set('s', sec % 60, 'Second', 'Seconds');
+  timer = setTimeout(tick, left % 1000 + 8);   // wake just after each whole second, no drift
+}
+
+/* ---------- the reveal ---------- */
+function shower(live) {
+  if (reduce) return;
+  mode = 'after';
+  showerEnd = performance.now() + (live ? 7000 : 4500);
+  const n = W < 600 ? 26 : 46;
+  for (let i = 0; i < n; i++) hearts.push(faller(true));
+}
+function reveal(live) {
+  if (revealed) return;
+  revealed = true; clearTimeout(timer);
+  const show = () => {
+    before.hidden = true; after.hidden = false;
+    if (!live) after.classList.add('quick');
+    void after.offsetWidth; after.classList.add('in');
+    window.scrollTo(0, 0);
+    shower(live);
+  };
+  if (live && !reduce) { before.classList.add('leaving'); swap = setTimeout(show, 1800); }
+  else show();
+}
+
+/* #preview runs a 10-second countdown into the reveal; #reveal jumps straight to it. */
+function start() {
+  clearTimeout(timer); clearTimeout(swap); revealed = false;
+  const h = location.hash;
+  target = h === '#preview' ? Date.now() + 10000 : h === '#reveal' ? 0 : TARGET;
+  for (const k in shown) delete shown[k];
+  mode = 'calm'; hearts = hearts.filter(x => !x.k);
+  after.hidden = true; after.classList.remove('in', 'quick');
+  before.hidden = false; before.classList.remove('leaving');
+  if (Date.now() >= target) reveal(false); else tick();
+}
+
+size();
+addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(size, 120); });
+if (!reduce) {
+  hearts = Array.from({ length: W < 600 ? 6 : 10 }, () => floater(true));
+  hearts.forEach(h => h.age = rnd(0, 1.6));
+  requestAnimationFrame(frame);
+}
+start();
+addEventListener('hashchange', start);
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden && !revealed) { clearTimeout(timer); tick(); }
+});
+}
+</script>
+</body>
+</html>
